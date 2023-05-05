@@ -17,11 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   Promise.any(window.promise)
   .then(result => {
       let output = document.getElementById("output")
-      if (output) {
-        output.innerText = result;
-      } else {
-        console.error("Output element not found");
-      }
+	  output.innerHTML = result;
+      // if (output) {
+      //   output.innerText = result;
+      // } else {
+      //   console.error("Output element not found");
+      // }
   })
   .catch(error => {
         console.log(error)
