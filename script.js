@@ -14,10 +14,13 @@ for(let i=0;i<5;i++){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	let output = document.getElementById("output")
+	  let p=document.createElement("p");
   Promise.any(window.promise)
   .then(result => {
-      let output = document.getElementById("output")
-	  output.innerHTML = result;
+      
+	  p.innerHTML = result;
+	  output.appendChild(p)
       // if (output) {
       //   output.innerText = result;
       // } else {
@@ -25,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // }
   })
   .catch(error => {
-        console.log(error)
+          p.innerHTML = error;
+	    output.appendChild(p)
   })
 })
